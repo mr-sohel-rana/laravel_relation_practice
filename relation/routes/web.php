@@ -35,3 +35,15 @@ Route::get('/about', function () {
 
     return view('about');
 });
+ Route::get('/test', function () {
+    $datas = [
+        ['name' => 'sohel', 'dept' => 'ice'],
+        ['name' => 'rahim', 'dept' => 'cse'],
+        ['name' => 'karim', 'dept' => 'eee'],
+        ['name' => 'jamal', 'dept' => 'bba'],
+        ['name' => 'kamal', 'dept' => 'math'],
+    ];
+
+    return view('test', compact('datas'));
+});
+
