@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Category;
-
+use App\Http\Controllers\Test1Controller;
 
 Route::get('/data', function () {
     $users = User::with('phone')->get();
@@ -47,3 +47,4 @@ Route::get('/about', function () {
     return view('test', compact('datas'));
 });
 
+Route::get('/test1/{id}',[Test1Controller::class,'show']);
