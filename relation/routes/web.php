@@ -5,7 +5,7 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Category;
 use App\Http\Controllers\Test1Controller;
-
+use App\Http\Controllers\queryBuilderController;
 Route::get('/data', function () {
     $users = User::with('phone')->get();
     return response()->json(['users'=>$users]);
@@ -48,3 +48,5 @@ Route::get('/about', function () {
 });
 
 Route::get('/test1/{id}',[Test1Controller::class,'show']);
+Route::get('/query',[queryBuilderController::class,'index']);
+Route::get('/user/{id}',[queryBuilderController::class,'user'])->name('user');
