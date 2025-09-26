@@ -14,5 +14,27 @@ class queryBuilderController extends Controller
     $stu = DB::table('querybuilder')->where('id', $id)->first();
     return view('user', ['user' => $stu]);
 }
+    public function add() {
+    $stu = DB::table('querybuilder')->insert([
+        'name'=>'soehl',
+        'dept'=>'cse',
+        'roll'=>'9'
+    ]);
+     if($stu){
+        return("insert successfull");
+     }else{
+        return('failed');
+     }
+}
+
+public function deleteUser(){
+    $stu=DB::table('querybuilder')->where('id',5)->delete();
+
+    if($stu){
+        return ("delete successfully");
+    }else{
+        return('failed');
+     }
+}
 
 }

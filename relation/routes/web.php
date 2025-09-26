@@ -50,3 +50,8 @@ Route::get('/about', function () {
 Route::get('/test1/{id}',[Test1Controller::class,'show']);
 Route::get('/query',[queryBuilderController::class,'index']);
 Route::get('/user/{id}',[queryBuilderController::class,'user'])->name('user');
+
+Route::get('/addUser',[queryBuilderController::class,'add']);
+Route::get('/deleteUser',[queryBuilderController::class,'deleteUser']);
+
+
