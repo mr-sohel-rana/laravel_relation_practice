@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApisController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SohelController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -14,3 +15,4 @@ Route::delete('/delete/{id}',[ApisController::class,'delete'])->name('delete');
 Route::get('/allData',[ApisController::class,'index'])->name('index');
 
 Route::resource('product', ProductController::class);
+Route::resource('sohel',SohelController::class);

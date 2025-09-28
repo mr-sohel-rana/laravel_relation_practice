@@ -1,8 +1,8 @@
  <h1>Edit Product</h1>
 
-<form action="{{ route('product.update', $product->id) }}" method="POST">
+<form action="{{ route('product.update', $product->id) }}" method="PUT">
     @csrf
-    @method('PUT')  
+    @method('PUT')
 
     <label for="name">Name</label><br>
     <input type="text" name="name" value="{{ $product->name }}"><br><br>
